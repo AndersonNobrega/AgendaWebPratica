@@ -18,8 +18,9 @@
 	</ul>
 	
 	<form action="${servletAtualizarContatos}" method="POST">
-		<b>Nome:</b> <input type="text" name="nome" />
-		<b>Telefone:</b> <input type="text" name="telefone" />
+		<b>ID: </b> <input type="text" name="id" />
+		<b>Nome: </b> <input type="text" name="nome" />
+		<b>Telefone: </b> <input type="text" name="telefone" />
 		<input type="submit" />
 	</form>
 

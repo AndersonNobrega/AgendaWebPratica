@@ -50,10 +50,5 @@ public class ContatoServlet extends HttpServlet {
 		this.contato = contato.getNome();
 
 		response.sendRedirect("contatos");
-		
-//		RequestDispatcher rd = request.getRequestDispatcher("/contatos");
-//		request.setAttribute("contato", contato);
-//		rd.forward(request, response);
-		
 	}
 }

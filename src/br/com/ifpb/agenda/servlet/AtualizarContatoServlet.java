@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.ifpb.agenda.model.Agenda;
+import br.com.ifpb.agenda.model.Contato;
 
 @WebServlet("/agenda/contatos/atualizar")
 public class AtualizarContatoServlet extends HttpServlet {
@@ -23,17 +24,12 @@ public class AtualizarContatoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Agenda agenda = new Agenda();
 		
+		int id = Integer.parseInt(request.getParameter("id"));
 		String nome = request.getParameter("nome");
-		boolean resultado;
+		String telefone = request.getParameter("telefone");
 		
-		if(agenda.removeContato(nome)) {
-			resultado = true;
-		} else {
-			resultado = false;
-		}
+		agenda.atualizaContato(id - 1, new Contato(nome, telefone));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/contatoRemovido.jsp");
-		request.setAttribute("resultado", resultado);
-		rd.forward(request, response);
+		response.sendRedirect("/agenda/contatos");
 	}
 }

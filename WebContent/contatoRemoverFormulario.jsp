@@ -18,7 +18,7 @@
 	</ul>
 	
 	<form action="${servletRemoverContatos}" method="POST">
-		<b>Nome:</b> <input type="text" name="nome" />
+		<b>ID: </b> <input type="text" name="id" />
 		<input type="submit" />
 	</form>
 </body>

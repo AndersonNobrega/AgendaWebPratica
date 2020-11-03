@@ -5,6 +5,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:url value="/" var="servletHome"/>
 <c:url value="/agenda" var="servletAgenda"/>
+<c:url value="/agenda/contatos" var="servletContatos"/>
 <c:url value="/agenda/contatos/remover" var="servletRemoverContatos"/>
 <c:url value="/agenda/contatos/atualizar" var="servletAtualizarContatos"/>
 
@@ -27,11 +28,14 @@
 	<h2>Lista de Contatos:</h2>
 	<ul>
 		<c:forEach items="${agenda}" var="contato">
-			<li>ID: ${contato.id} - Nome: ${contato.nome} - Telefone: ${contato.telefone} - Data de Cadastro: <fmt:formatDate 
+			<c:set var="id" value="${id = id + 1}"></c:set>
+			<li>ID: ${id} - Nome: ${contato.nome} - Telefone: ${contato.telefone} - Data de Cadastro: <fmt:formatDate 
 			value="${contato.dataCadastro}" 
-			pattern="dd/MM/yyyy"/> <a href="${servletAtualizarContatos}">Atualizar</a> | <a href="${servletRemoverContatos}">Remover</a></li>		
+			pattern="dd/MM/yyyy"/></li>		
 			
 		</c:forEach>
 	</ul>
+	
+	<a href="/contatoFormulario.jsp">Adicionar</a> | <a href="${servletAtualizarContatos}">Atualizar</a> | <a href="${servletRemoverContatos}">Remover</a>
 </body>
 </html>

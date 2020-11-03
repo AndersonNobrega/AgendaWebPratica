@@ -4,6 +4,7 @@
 <c:url value="/agenda/contatos" var="servletContatos"/>
 <c:url value="/" var="servletHome"/>
 <c:url value="/agenda/contatos/remover" var="servletRemoverContatos"/>
+<c:url value="/agenda/contatos/atualizar" var="servletAtualizarContatos"/>
 
 <!DOCTYPE html>
 <html>
@@ -21,6 +22,7 @@
 		<li><a href="${servletContatos}">Listar Contatos</a></li>
 		<li><a href="contatoFormulario.jsp">Adicionar Contato</a></li>
     	<li><a href="${servletRemoverContatos}">Remover Contato</a></li>
+    	<li><a href="${servletAtualizarContatos}">Atualizar Contato</a></li>
 	</ul>
 </body>
 </html>

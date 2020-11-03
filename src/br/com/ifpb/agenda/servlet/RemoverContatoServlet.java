@@ -24,18 +24,11 @@ public class RemoverContatoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Agenda agenda = new Agenda();
 		
-		String nome = request.getParameter("nome");
-		boolean resultado;
+		int id = Integer.parseInt(request.getParameter("id"));
 		
-		if(agenda.removeContato(nome)) {
-			resultado = true;
-		} else {
-			resultado = false;
-		}
+		agenda.removeContato(id - 1);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/contatoRemovido.jsp");
-		request.setAttribute("resultado", resultado);
-		rd.forward(request, response);
+		response.sendRedirect("/agenda/contatos");
 	}
 
 }

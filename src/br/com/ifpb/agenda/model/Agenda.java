@@ -12,17 +12,19 @@ public class Agenda {
 		return contato;
 	}
 	
-	public boolean removeContato(String nome) {
-		for(Contato contato : Agenda.lista) {
-			if(contato.getNome().equals(nome)) {
-				return Agenda.lista.remove(contato);
-			}
-		}
-		
-		return false;
+	public Contato removeContato(int index) {
+		return Agenda.lista.remove(index);
 	}
 	
 	public List<Contato> listaContato() {
 		return Agenda.lista;
+	}
+	
+	public Contato atualizaContato(int index, Contato contato) {
+		return Agenda.lista.set(index, contato);
+	}
+	
+	public int tamanho() {
+		return Agenda.lista.size();
 	}
 }
